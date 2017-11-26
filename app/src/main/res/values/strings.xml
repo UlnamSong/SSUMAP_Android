@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">SSUMAP_Android</string>
+    <string name="cd_mainlogo">splash main logo</string>
 </resources>
