@@ -20,6 +20,16 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerAdapter.ItemVi
         mItems = items;
     }
 
+    private ItemClick itemClick;
+    public interface ItemClick {
+        public void onClick(View view,int position);
+    }
+
+    //아이템 클릭시 실행 함수 등록 함수
+    public void setItemClick(ItemClick itemClick) {
+        this.itemClick = itemClick;
+    }
+
     @Override
     public ItemViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_facility,parent,false);

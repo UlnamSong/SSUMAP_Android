@@ -1,11 +1,13 @@
 package com.example.terry.ssumap_android;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.MenuItem;
+import android.view.View;
 
 import java.util.ArrayList;
 
@@ -48,7 +50,7 @@ public class FacilityListActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    private void setRecyclerView(){
+    private void setRecyclerView() {
         recyclerView.setHasFixedSize(true);
         adapter = new RecyclerAdapter(mItems);
 
@@ -56,13 +58,30 @@ public class FacilityListActivity extends AppCompatActivity {
         recyclerView.addItemDecoration(new SimpleDividerItemDecoration(this));
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
+        recyclerView.addOnItemTouchListener(
+                new RecyclerItemClickListener(this, recyclerView, new RecyclerItemClickListener.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(View view, int position) {
+                        // do whatever
+                        Intent intent = new Intent(FacilityListActivity.this, DetailListActivity.class);
+                        intent.putExtra("CategoryIndex", position);
+                        startActivity(intent);
+                    }
+
+                    @Override
+                    public void onLongItemClick(View view, int position) {
+                        // do whatever
+                    }
+                })
+        );
+
         setData();
     }
 
     private void setData() {
         mItems.clear();
 
-        for(int i = 0; i < facilityCategorys.length; ++i) {
+        for (int i = 0; i < facilityCategorys.length; ++i) {
             mItems.add(new Facility(facilityCategorys[i], facilityImages[i]));
         }
 

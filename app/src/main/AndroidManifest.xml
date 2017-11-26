@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
 
     <meta-data
         android:name="com.kakao.sdk.AppKey"
@@ -28,7 +29,9 @@
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppThemeNoTitle" />
-        <activity android:name=".FacilityListActivity"></activity>
+        <activity android:name=".FacilityListActivity" />
+        <activity android:name=".DetailListActivity" />
+        <activity android:name=".SpotDetailActivity"></activity>
     </application>
 
 </manifest>

@@ -3,4 +3,9 @@
     <string name="cd_mainlogo">splash main logo</string>
     <string name="actionbar_title_around">주변시설</string>
     <string name="actionbar_title_tour">캠퍼스투어</string>
+
+    <string name="btn_call">전화</string>
+    <string name="btn_share">공유</string>
+    <string name="btn_route">길찾기</string>
+    <string name="msg_incorrect">실내 혹은 기상상황에 따라 거리정보가 정확하지 않을 수 있습니다.</string>
 </resources>
