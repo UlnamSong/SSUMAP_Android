@@ -1,4 +1,4 @@
-package com.example.terry.ssumap_android;
+package com.kim.terry.ssumap_android;
 
 /**
  * Created by terry on 2017. 11. 26..

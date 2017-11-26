@@ -6,7 +6,7 @@
     android:layout_height="match_parent" >
 
     <RelativeLayout
-        android:id="@+id/map_view"
+        android:id="@+id/map_view2"
         android:layout_width="match_parent"
         android:layout_height="250dp" />
 
@@ -14,6 +14,6 @@
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/map_view" />
+        android:layout_below="@+id/map_view2" />
 
 </RelativeLayout>

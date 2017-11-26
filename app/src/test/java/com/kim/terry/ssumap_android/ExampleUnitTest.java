@@ -1,4 +1,4 @@
-package com.example.terry.ssumap_android;
+package com.kim.terry.ssumap_android;
 
 import org.junit.Test;
 

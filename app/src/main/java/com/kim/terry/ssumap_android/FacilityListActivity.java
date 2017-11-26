@@ -1,4 +1,4 @@
-package com.example.terry.ssumap_android;
+package com.kim.terry.ssumap_android;
 
 import android.content.Intent;
 import android.support.v7.app.ActionBar;

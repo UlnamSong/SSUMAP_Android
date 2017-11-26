@@ -1,4 +1,4 @@
-package com.example.terry.ssumap_android;
+package com.kim.terry.ssumap_android;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;

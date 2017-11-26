@@ -1,18 +1,19 @@
-package com.example.terry.ssumap_android;
+package com.kim.terry.ssumap_android;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.gun0912.tedpermission.PermissionListener;
 import com.gun0912.tedpermission.TedPermission;
@@ -73,13 +74,22 @@ public class MainActivity extends AppCompatActivity {
                 mapView.setCurrentLocationTrackingMode(MapView.CurrentLocationTrackingMode.TrackingModeOnWithoutHeading);
                 mapView.setZoomLevel(1, true);
 
-                ViewGroup mapViewContainer = (ViewGroup) findViewById(R.id.map_view);
+                ViewGroup mapViewContainer = (ViewGroup) findViewById(R.id.map_view2);
                 mapViewContainer.addView(mapView);
             }
 
             @Override
             public void onPermissionDenied(ArrayList<String> deniedPermissions) {
-
+                AlertDialog.Builder alert = new AlertDialog.Builder(MainActivity.this);
+                alert.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();     //닫기
+                        finish();
+                    }
+                });
+                alert.setMessage("권한 설정을 허용해주세요. 어플리케이션을 종료합니다.");
+                alert.show();
             }
         };
 
