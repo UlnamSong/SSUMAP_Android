@@ -1,8 +1,10 @@
 package com.example.terry.ssumap_android;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.ActionBar;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -80,6 +82,36 @@ public class SpotDetailActivity extends AppCompatActivity {
                 Intent intent = new Intent(Intent.ACTION_CALL);
                 intent.setData(Uri.parse("tel:" + phone.replace("-", "")));
                 startActivity(intent);
+            }
+        });
+
+        btnShare.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String subject = name;
+                String text = "주소 : " + address + "\n전화번호 : " + phone + "\n설명 : " + description;
+
+                Intent intent = new Intent(android.content.Intent.ACTION_SEND);
+                intent.setType("text/plain");
+                intent.putExtra(Intent.EXTRA_SUBJECT, subject);
+                intent.putExtra(Intent.EXTRA_TEXT, text);
+                Intent chooser = Intent.createChooser(intent, "공유하기");
+                startActivity(chooser);
+            }
+        });
+
+        btnRoute.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                AlertDialog.Builder alert = new AlertDialog.Builder(SpotDetailActivity.this);
+                alert.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        dialog.dismiss();     //닫기
+                    }
+                });
+                alert.setMessage("현재 제공되지 않는 기능입니다. 추후 업데이트를 통해 제공될 예정입니다.");
+                alert.show();
             }
         });
     }

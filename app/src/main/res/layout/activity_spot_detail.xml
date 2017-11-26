@@ -48,7 +48,7 @@
                     android:id="@+id/tv_distance"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="0.2km"
+                    android:text="거리 정보 미제공"
                     android:textColor="@android:color/white" />
             </LinearLayout>
 
