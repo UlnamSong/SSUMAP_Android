@@ -17,7 +17,7 @@
             android:layout_marginBottom="20dp"
             android:layout_marginLeft="10dp"
             android:background="@drawable/round_button"
-            android:text="주변 시설"
+            android:text="@string/actionbar_title_around"
             android:textColor="@android:color/white"
             android:textSize="16sp" />
 
@@ -37,7 +37,7 @@
             android:layout_marginBottom="20dp"
             android:layout_marginRight="10dp"
             android:background="@drawable/round_button"
-            android:text="캠퍼스 투어"
+            android:text="@string/actionbar_title_tour"
             android:textColor="@android:color/white"
             android:textSize="16sp" />
 

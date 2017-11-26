@@ -1,9 +1,12 @@
 package com.example.terry.ssumap_android;
 
 import android.Manifest;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.gun0912.tedpermission.PermissionListener;
@@ -15,16 +18,30 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
+    private Button btnFacility;
+    private Button btnTour;
+    private Button btnCurLocation;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        btnFacility = findViewById(R.id.btn_facility);
+        btnTour = findViewById(R.id.btn_tour);
+        btnCurLocation = findViewById(R.id.btn_cur_loc);
+
+        btnFacility.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, FacilityListActivity.class));
+            }
+        });
+
         PermissionListener permissionlistener = new PermissionListener() {
             @Override
             public void onPermissionGranted() {
-                Toast.makeText(MainActivity.this, "권한 허가", Toast.LENGTH_SHORT).show();
-
                 MapView mapView = new MapView(MainActivity.this);
                 mapView.setDaumMapApiKey("ea8d49685012f33f11397e22230ecba1");
 
@@ -34,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onPermissionDenied(ArrayList<String> deniedPermissions) {
-                Toast.makeText(MainActivity.this, "권한 거부\n" + deniedPermissions.toString(), Toast.LENGTH_SHORT).show();
+
             }
         };
 

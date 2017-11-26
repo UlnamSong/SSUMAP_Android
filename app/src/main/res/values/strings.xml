@@ -1,4 +1,6 @@
 <resources>
     <string name="app_name">SSUMAP_Android</string>
     <string name="cd_mainlogo">splash main logo</string>
+    <string name="actionbar_title_around">주변시설</string>
+    <string name="actionbar_title_tour">캠퍼스투어</string>
 </resources>

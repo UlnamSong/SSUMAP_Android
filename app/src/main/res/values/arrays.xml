@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="facility_category">
+        <item>지원센터</item>
+        <item>카페/편의점</item>
+        <item>병원/약국/보건실</item>
+        <item>매장/편의시설</item>
+        <item>교내식당</item>
+        <item>문구/기념품</item>
+        <item>주차장</item>
+        <item>은행/ATM/우체국</item>
+        <item>자동심장충격기(AED)</item>
+    </string-array>
+</resources>
